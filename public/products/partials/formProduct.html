@@ -1,0 +1,55 @@
+<section class="container">
+
+<div class="row" >
+    <div class="col-md-7">
+
+        <form novalidate="true" name="productForm">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 style="text-align:center">Completa los campos requeridos</h2>
+                    <div class="alert alert-info" ng-bind="message" ng-show="message"></div>
+                    <div class="alert alert-error" ng-bind="error" ng-show="error"></div>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="idProduct">Id Producto</label>
+                        <input name="idProduct" type="text" ng-model="product.idProduct" id="idProduct" class="form-control" placeholder="Codigo del producto" required>
+                        <span ng-show="productForm.idProduct.$error.required">El nombe del producto es requerido</span>
+                    </div>
+
+                    <div class="form-group" style="margin-top:2em">
+                        <label class="control-label" for="nombre">Nombre</label>
+                        <input name="nombre" type="text" ng-model="product.nombre" id="nombre" class="form-control" placeholder="Nombre del producto" required>
+                        <span ng-show="productForm.nombre.$error.required">El nombre del producto es requerido</span>
+                    </div>
+
+                    <div class="form-group" style="margin-top:2em">
+                        <label class="control-label" for="descripcion">Descripcion</label>
+                        <input name="descripcion" type="text" ng-model="product.descripcion" id="descripcion" class="form-control" placeholder="Descripcion del producto" required>
+                        <span ng-show="productForm.descripcion.$error.required">La descripcion del producto es requerido</span>
+                    </div>
+
+                    <div class="form-group" style="margin-top:2em">
+                        <label class="control-label" for="precio">Precio</label>
+                        <input name="precio" type="number" ng-model="product.precio" id="precio" class="form-control" placeholder="Precio del producto" required>
+                        <span ng-show="productForm.precio.$error.required">El precio del producto es requerido</span>
+                    </div>
+
+                    <div class="form-group" style="margin-top:2em">
+                        <label class="control-label" for="imagen">Imagen</label>
+                        <input name="imagen" type="text" ng-model="product.imagen" id="imagen" class="form-control" placeholder="Imagen del producto">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="button" ng-click="reset()" value="Nuevo" class="btn btn-primary"/>
+                        <input type="submit" ng-click="update()"                            value="{{product.id ? 'Update' : 'Create'}}"  ng-disabled="productForm.$invalid" class="btn btn-primary"/>
+                        <input ng-show="mostrarDelete" type="button" ng-click="delete()"   value="Delete" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</section>

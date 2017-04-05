@@ -1,0 +1,28 @@
+<div class = "section clear-padding">
+    <div class = "container">
+        <div class = "row main-jumbotron">
+            <div class="col-md-8 col-md-offset-2">
+                <form novalidate="true" name="usersLogin" action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input name="username" type="text" ng-model="user.username" id="username" class="form-control" placeholder="Username" go-to-on-enter="input[name='password']" required>
+                        <span ng-show="usersLogin.username.$error.required">El nombe de usuario es requerido</span>
+                    </div>
+
+                    <div class="form-group" style="margin-top:2em">
+                        <label class="control-label" for="password">Password</label>
+                        <input name="password" type="password" ng-model="user.password" id="password" class="form-control" placeholder="Ingrese su contraseña" required>
+                        <span ng-show="usersLogin.password.$error.required">La contraseña es requerida</span>
+                    </div>
+                    
+                    <hr>
+
+                    <div class="form-group">
+                        <input type="button" ng-click="reset()" value="Nuevo" class="btn btn-primary"/>
+                        <input type="submit" value="Iniciar Sesion"  ng-disabled="usersLogin.$invalid" class="btn btn-primary"/>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+</div>

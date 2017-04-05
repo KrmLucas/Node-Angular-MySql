@@ -1,0 +1,29 @@
+{
+    "appName": "TP-Final",
+    "servePort": 3000,
+    "views": {
+        "engine": ".ejs",
+        "extension": "ejs"
+    },
+    "html": {
+        "livereload": true,
+        "minify": false, 
+        "css": {
+            "compress": false
+        }
+    },
+    "session": {
+        "secret": "m14pl1c4710n"
+    },
+    "db": {
+        "mysql": {
+            "host": "localhost",
+            "user": "root",
+            "password": "",
+            "database": "basefinalnode",
+            "port": 3306,
+            "debug": true,
+            "socket": "/var/mysql/mysql.sock"
+        }
+    }
+}
